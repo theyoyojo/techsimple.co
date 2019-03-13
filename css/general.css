@@ -1,0 +1,1140 @@
+/* #
+	Company: TechSimple.co
+	Description: TechSimple is here to assist you with your technology problems and teach you how to solve them yourself.
+	Author URI: http://www.sidoniedesigns.com/
+	Version: 1.0
+   Copyright: TechSimple 2016
+*/
+/* # Table of Contents
+
+	- HTML5 Reset
+		- Box Sizing
+	- Defaults
+		- Typographical Elements
+		- Images Reset
+		- Links
+		- Accessibiliy
+	- Initial Layout
+	- Site Header and Banner
+	- Site Navigation
+		- Mobile Menu Toggle
+		- Header Navigation
+	- Content Area
+		- Services
+		- Trestimonials
+		- About Us
+		- Rates
+		- Contact
+	- Site Footer
+*/
+
+/* Box Sizing
+--------------------------------------------- */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* comment from Morten in Popper WP theme. Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+
+/* ## Typographical
+--------------------------------------------- */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: #030303;
+	font-family: 'Open Sans', serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.2;
+}
+
+#services h2, 
+#testimonials h2, 
+#about-us h2, 
+#rates h2,
+#contact h2{
+    font-family: 'Bitter', serif;
+	text-align: center;
+}
+
+
+header, .content, footer  {
+	font-size: 1.125em;
+	line-height: 1.6em;
+}
+
+/* Responsive Typography */
+
+@media screen and (min-width: 50em) {
+	.content {
+		font-size: 1.2em;
+		line-height: 1.375em;
+	}
+}
+
+@media screen and (min-width: 60em) {
+	.content {
+		font-size: 1.3em;
+		line-height: 1.4em;
+	}
+}
+
+h1,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: 'Open Sans', sans-serif;
+	line-height: 1.3em;
+	margin-top: 1.3em;
+	margin-bottom: 1em;
+}
+
+h2 {
+	margin-bottom: 1.4em;
+	margin-top: 1.6em;
+}
+	
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.6em;
+}
+
+h3 {
+	font-size: 1.4em;
+}
+
+h4 {
+	font-size: 1.2em;
+}
+
+h5 {
+	font-size: 1.1em;
+}
+	
+
+/* elements */
+
+body {
+	background: #fff; /* fallback if no custom background is defined. */
+/*	background: #e8f7fc;*/
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+
+blockquote {
+	margin: 0 1.5em;
+	background: none;
+	clear: both;
+	font-style: italic;
+	font-weight: 700;
+	font-family: 'Bitter', serif;
+	font-size: 1em;
+	color: rgba(0, 0, 0, 0.65);
+	text-align: left;
+}
+
+blockquote:before {
+	font-family: fontawesome;
+	content: "\F10D";
+	display: block;
+	float: left;
+	font-size: 2em;
+	color: #00baff;
+	margin-right: .5em;
+}
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 15px;
+	font-size: rem;
+	line-height: 1.6;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted #666;
+	cursor: help;
+}
+
+mark,
+ins {
+	background: #fff9c0;
+	text-decoration: none;
+}
+
+sup,
+sub {
+	font-size: 75%;
+	height: 0;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+}
+
+small {
+	font-size: 75%;
+}
+
+big {
+	font-size: 125%;
+}
+
+
+
+/*--------------------------------------------------------------
+Images - reset 
+--------------------------------------------------------------*/
+
+img {
+    display: block;
+    width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+/* # Links
+--------------------------------------------------------------*/
+a {
+	color: #00baff;
+	text-decoration: none;
+}
+
+a:visited {
+	color: #00baff;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #030303;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+/*--------------------------------------------------------------
+Accessibility
+--------------------------------------------------------------*/
+/* Text meant only for screen readers */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:hover,
+.screen-reader-text:active,
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar */
+}
+
+
+/*----------------------------------------------------------------------- 
+* initial Layout 
+-------------------------------------------------------------------------*/
+.wrap {
+    width: 90%;
+	max-width: 1200px;
+    margin: 0 auto;
+	padding-bottom: 2em;
+}
+
+/*----------------------------------------------------------------------- 
+* header and banner 
+-------------------------------------------------------------------------*/
+
+
+.header-wrap {
+	 text-align: center;
+}
+
+.site-branding {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.site-title {
+    margin-bottom: 0;
+}
+
+.site-title a {
+    display: block;
+    text-indent: -9999px;
+}
+.site-title a {
+    background: url(../img/TechSimple-logo.png) center no-repeat !important;
+    background-size: contain !important;
+    display: block;
+    min-height: 97px;
+    width: 100%;
+}
+
+	
+@media screen and (min-width: 1110px ) {
+	
+	header {
+		border-top: 4px solid #00baff;
+	}
+	.header-wrap {
+    	width: 97%;
+    	margin: 0 auto;
+		max-width: 1200px;
+		margin-bottom: 1em;
+	}
+	
+	.site-title a {
+		background: url(../img/TechSimple-logo.png) no-repeat !important;
+	}
+	.header-wrap {
+		text-align: left;
+	}
+	
+	.site-title {
+		margin-bottom: 0;
+		margin-top: .5em;
+	}
+	
+	.site-branding {
+		float: left;
+		width: 30%;
+		margin-top: 2em;
+	}
+	
+	.header-right {
+		float: right;
+		width: 70%;
+		text-align: right;
+		margin-top: 2.3em;
+	}
+	
+	header .email {
+		margin-bottom: .5em;
+	}
+}
+
+
+.moto {
+    font-weight: 700;
+	 font-size: 21px;
+    font-size: 1.32rem;
+	margin-top: 0;
+}
+
+.phone a:hover, .email a:hover {
+    color: #030303;
+}
+.phone a, .email a {
+   font-weight: 700;
+	font-size: 20px;
+	font-size: 1.3rem;
+}
+
+span.info {
+	display: none;
+}
+
+.email {
+	margin-bottom: 1.5em;
+}
+
+.banner-wrap {
+	padding-bottom: 1em;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.banner-heading {
+	font-size: 24px;
+	font-size: 1.5rem;
+	margin-top: 1.2em;
+	margin-bottom: 1.2em;
+	font-family: 'Bitter', serif;
+}
+
+/* .banner-heading::after {
+    display: block;
+    margin: 1em 0 0 0;
+    content: "";
+    width: 60%;
+    border-bottom: 4px solid #00baff;
+} */
+
+
+.banner-text {
+    font-size: 1.125em;
+    line-height: 1.5;
+}
+
+
+.banner {
+    background-color: #e8f7fc;
+}
+
+@media screen and (min-width: 714px ) {
+	.banner-wrap {
+		padding-bottom: 0;
+		width: 100%;
+	}
+	
+	.banner {
+		position: relative;
+	}
+	.banner-width {
+		 position: absolute;
+		 bottom: 0px;
+	}
+	
+	.banner-placement {
+		 color: #fff;
+		 width: 100%;
+		 background: hsla(196,100%,50%,.7);
+		 padding: .5em .5em .5em 2em;
+		 text-shadow: 1px 1px 1px black; 
+	}
+		
+	
+	.banner-heading {
+		font-size: 1.4em;
+		margin-top: .4em;
+	}
+}
+@media screen and (min-width: 900px ) {
+	
+	.banner-heading {
+		font-size: 1.5em;
+	}
+	.banner-text {
+    	font-size: 1.4em;
+	}
+	
+}
+
+
+@media screen and (min-width: 1000px ) {
+	.banner-wrap {
+		width: 80%;
+		margin: 0;
+	}
+}
+	
+@media screen and (min-width: 1200px ) {
+	.banner {
+		max-height: 730px;
+		overflow: hidden;
+	}
+	
+	.banner-width {
+		width: 100%;
+		bottom: 190px;
+	}
+	.banner-wrap {
+		width: 1200px;
+		margin: 0 auto;
+	}
+	.banner-placement {
+		float: left;
+		width: 40%;
+	}
+	.banner-heading {
+		font-size: 27px;
+		font-size: 1.6rem;
+	}
+}
+@media screen and (min-width: 1400px ) {
+	.banner-placement {
+		padding-top: 2.7em;
+		padding-bottom: 2.7em;
+	}
+	
+}
+
+/*--------------------------------------------------------------
+Main Navigation
+--------------------------------------------------------------*/
+
+.main-navigation {
+	clear: both;
+	display: block;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-size: 1.22rem;
+}
+
+.main-navigation ul {
+	display: none;
+	list-style: none;
+	margin-left: 0;
+}
+
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation ul ul {
+	display: none;
+	margin-left: 0.8em;
+}
+
+.main-navigation a {
+	position: relative;
+	display: block;
+	padding: 0 .8em;
+	text-decoration: none;
+	line-height: 1.6em;
+	color: #000;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	background: #fff;
+	color: #000;
+}
+
+.main-navigation a,
+.main-navigation ul ul li:lastchild a {
+	border-bottom: 1px solid white;
+}
+
+/* .main-navigation ul li:last-child a {
+	border-bottom: none;
+}*/
+
+.main-navigation ul .toggled-on {
+	display: block;
+}
+.main-navigation li {
+	position: relative;
+}
+
+.main-navigation .current-menu-item > a{
+	font-weight: 700;
+}
+
+.main-navigation .nav-menu > ul > li:first-child,
+.main-navigation .nav-menu > li:first-child {
+	border-top: 0;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a{
+	padding-right: 48px;
+}
+
+.no-js .main-navigation ul ul {
+	display: block;
+}
+
+.dropdown-toggle {
+	position: absolute;
+	height: 27px;
+	width: 27px;
+	top: 12px;
+	right: 6px;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+	padding: 0;
+	background-color: inherit;
+	border: 1px solid #fff;
+	content: "";
+	color: #fff;
+	text-transform: lowercase; /* Stop screen readers from reading the text as capital letters */
+}
+
+.dropdown-toggle::after {
+	content: "+";
+	font-size: 16px;
+	font-weight: bold;
+	line-height: 27px;
+	position: relative;
+	top: 0;
+	width: 27px;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle:focus {
+	background-color: #fff;
+	color: #000;
+}
+
+.dropdown-toggle.toggle-on:after {
+	content: "-";
+}
+
+.main-navigation a:hover ~ .dropdown-toggle,
+.main-navigation a:focus ~ .dropdown-toggle {
+    color: hsl(0, 0%, 20%);
+}
+
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+	display: block;
+}
+
+.menu-toggle {
+	/* position: fixed;
+	z-index: 100;
+	bottom: 1em;
+	left: 1em; */
+	margin-top: 3%;
+	width: 100%;
+	font-weight: 700;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+	background-color: #e8f7fc;
+	border: solid 2px #e8f7fc;
+	transition: all ease-out 400ms;
+	padding: .5em 0;
+}
+
+@media screen and (min-width: 640px ) {
+
+	/* .menu-toggle {
+		width: 90%;
+    	margin: 0 auto;
+	} */
+}
+
+.menu-toggle.hide {
+	bottom: -2.5em;
+}
+
+/* Make sure the button doesn't hide when menu is open. */
+
+.toggled .menu-toggle.hide {
+	bottom: 1em;
+}
+
+
+/* .menu-toggle:hover,
+.menu-toggle:focus {
+	text-decoration: underline;
+} */
+
+@media screen and (min-width: 50em) {
+	.menu-toggle {
+		display: none;
+	}
+	.main-navigation ul {
+		display: block;
+	}
+}
+
+/* Hovering menu */
+
+.main-navigation.toggled {
+	/* position: fixed;
+	bottom: 0; 
+	padding: 1em; */
+	z-index: 1;
+   width: 100%;
+   box-sizing: border-box;
+}
+
+.nav-menu {
+	padding: 1em;
+	/* margin-bottom: 3em; */
+	background-color: #f3f3f3;
+}
+
+.main-navigation.toggled ul {
+	max-height: calc(100vh - 8em);
+	overflow-y: auto;
+}
+
+.main-navigation.toggled ul ul {
+	display: none;
+}
+
+.main-navigation.toggled ul ul.toggled-on,
+.main-navigation.toggled ul ul.toggled-on > ul {
+	display: block;
+}
+
+/* Horizontal menu on wide screens 800px */
+@media screen and (min-width: 50em) {
+
+	/* Position the menu in the header */
+	.main-navigation,
+	.main-navigation.toggled {
+		position: relative;
+        margin: 0 .5em;
+        padding: 0;
+        width: auto;
+		/* background-color: #f3f3f3; */
+	}
+
+	.nav-menu {
+		padding: .7em 0 0 0;
+		background-color: transparent;
+	}
+
+	.main-navigation ul,
+	.main-navigation.toggled ul {
+      /* display: flex;
+      flex-wrap: wrap;
+		margin: 0;
+		padding: .5em 0;
+		justify-content: center; */
+		min-height: 3em;
+		max-height: none;
+		margin: 0;
+		padding-left: 0;
+		text-align: center;
+		
+	}
+	
+	
+	.main-navigation.toggled ul {
+		overflow-y: visible;
+	}
+
+	/* Display the menu items in a horizontal order */
+	.main-navigation li {
+		display: inline-block;
+		border: none;
+	}
+
+	/* Display the menu items in a horizontal order */
+	/* .main-navigation li {
+		border: none;
+	}*/
+
+	/* Add an outline to the drop-down menus */
+	.main-navigation ul ul {
+		outline: 1px solid #333;
+	}
+
+	/* Left-align drop-down menu items */
+	.main-navigation li li {
+		display: block;
+		text-align: left;
+	}
+
+    .main-navigation a,
+    .dropdown-toggle {
+        color: hsl(0, 0%, 20%);
+    }
+
+	.main-navigation a,
+	.main-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+
+	/* Add an outline on hovered and focused menu items */
+	.main-navigation a:hover,
+	.main-navigation a:focus {
+		background: transparent;
+		color: #333;
+		border-bottom: 3px solid #00baff;
+	}
+
+    .main-navigation li li a {
+        color: hsl(0, 0%, 90%);
+    }
+
+	/* Create hover and focus contrast on drop-down items */
+	.main-navigation li li a:hover,
+	.main-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+
+	/* Position drop-down menus absolutely */
+	.main-navigation ul ul.toggled-on {
+		position: absolute;
+		width: 12em;
+		display: block;
+		z-index: 10;
+		margin-left: 0;
+        padding: 0;
+		background: #000;
+	}
+
+	.main-navigation ul ul ul.toggled-on {
+		position: relative;
+	}
+
+	/* Indent 3rd level drop-down menus */
+	.main-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+
+	/* Simplify the drop-down toggle */
+	.dropdown-toggle {
+		top: 13px;
+		right: 12px;
+		border: none;
+	}
+
+    .dropdown-toggle:hover, .dropdown-toggle:focus {
+        background-color: inherit;
+        outline: solid 1px #b3b3b3;
+    }
+
+	.dropdown-toggle::after {
+		line-height: 27px;
+		width: 27px;
+	}
+
+}
+	
+	
+@media screen and (min-width: 1110px) {
+	.main-navigation ul,
+	.main-navigation.toggled ul {
+		text-align: right;
+		
+	}
+	.main-navigation,
+	.main-navigation.toggled {
+        margin: 0;
+	}
+}
+
+
+	      
+/*
+* main content
+*/
+/* ul {
+	list-style: none;
+}
+
+li::before {
+	content: "• "; 
+	color: #00baff;
+} */
+/*
+* Services
+*/
+.main-quote {
+    margin-top: 3em;
+    margin-bottom: 2em;
+	font-size: 1.15em;
+}
+
+	
+@media screen and (min-width: 940px) {
+	/* Services */
+
+	.main-quote {
+    	margin-top: 2em;
+	}
+	
+	.services-list > p {
+   	margin-top: 0;
+	}
+	
+	article.services-list {
+    	float: left;
+    	width: 60%;
+	}
+	
+	.main-quote {
+    	float: right;
+    	width: 36%;
+    	text-align: left;
+		font-size: 1.1em;
+	}
+	
+}
+/*
+*testimonials
+*/
+
+#testimonials {
+	background-color: #e8f7fc;
+}
+
+img.test {
+    height: 100px;
+    width: 100px;
+    float: left;
+    margin-right: 1em;
+}
+.test1 {
+	padding-top: 2rem;
+}
+
+.test-quote {
+    font-style: italic;
+}
+.quote-text {
+	margin-top: 0;
+}
+@media screen and (min-width: 600px) {
+	.test2, .test1 {
+		width: 90%;
+		margin: 0 auto;
+		position: relative;
+	}
+
+		
+	img.test {
+		float: none;
+		position: absolute;
+	}
+	.test2 img.test {
+		top: 0px;
+	}
+	.test1 img.test {
+		top: 40px;
+	}
+	.quote {
+		padding-left: 120px;
+	}
+	
+}
+ 
+	
+@media screen and (min-width: 940px) {
+	.test2, .test1 {
+		width: 97%;
+		margin: 0 auto;
+	}
+	
+	.test2 {
+		float: left;
+		width: 48%
+	}
+	
+	.test1 {
+		float: right;
+		width: 48%;
+		padding: 0;
+	}
+	
+	.test1 img.test {
+    top: 0px;
+	}
+	
+	
+}
+/*
+* About Us 
+*/
+
+.test-quote::after {
+    display: block;
+    margin: 1em 0 0 0;
+    content: "";
+    width: 30%;
+    border-bottom: 4px solid #00baff;
+}
+
+@media screen and (min-width: 700px) {
+	#about-us img {
+		 width: 90%;
+		 margin: 0 auto;
+	}
+	#about-us {
+		padding-bottom: 3em;
+	}
+}
+@media screen and (min-width: 940px) {
+	.about-text {
+	padding-bottom: 0;
+	}
+	
+	#about-us {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	.about-text {
+    float: left;
+    width: 48%;
+		margin-top: 0;
+	}	
+	
+	#about-us img {
+    float: right;
+    width: 48%;
+	}
+	
+	.about-text > p {
+    margin-top: 0;
+	}
+	
+}
+/*
+* Rates 
+*/
+#rates {
+	background-color: #e8f7fc;
+}
+.satisfaction-quote {
+	margin-top: 3em;
+    margin-bottom: 2em;
+}
+
+@media screen and (min-width: 940px) {
+	.rates-text {
+		float: left;
+ 		width: 48%;
+	}
+	
+	.satisfaction-quote {
+    	float: right;
+    	width: 48%;
+	}
+	
+	.satisfaction-quote {
+    	margin-top: 1em;
+	}
+
+}
+
+/*
+* Contact us
+*/
+.days:before {
+    content: "\000A";
+    white-space: pre;
+}
+.phone {
+    margin-top: 1.7em;
+}
+.email {
+    margin-bottom: 1.7em;
+}
+
+@media screen and (min-width: 430px) {
+	
+	.days:before {
+		content: "";
+	}
+}
+@media screen and (min-width: 700px) {
+	img.boston {
+		 width: 90%;
+		 margin: 0 auto;
+	}
+	#contact {
+		padding-bottom: 3em;
+	}
+	
+}
+@media screen and (min-width: 940px) {
+	#contact {
+		width: 90%;
+		margin: 0 auto;
+		max-width: 1200px;
+	}
+	.contact-text {
+		float: left;
+ 		width: 48%;
+	}
+	
+	.contact-text > p {
+    	margin-top: 0;
+	}
+	
+	img.boston {
+    	float: right;
+    	width: 48%;
+	}
+
+}
+
+
+@media screen and (min-width: 940px) {
+	
+	#contact h2,
+	#testimonials h2,
+	#about-us h2 {
+		margin-bottom: 2em;
+	}
+}
+
+/*
+*  Footer
+*/
+footer {
+    background-color: #e8f7fc;
+    padding: .5em;
+}
+.year {
+    font-size: .7em;
+    float: left;
+    margin-top: 21px;
+    width: 20%;
+}
+footer .footer-logo{
+   margin: 0 auto;
+   width: 12em;
+	text-align: center;
+}
+footer img {
+    width: 80%;
+}
+.love {
+    font-size: .7em;
+	text-align: center;
+}
+.fa-heart {
+    color: #00baff;
+}
