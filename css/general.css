@@ -1,9 +1,9 @@
 /* #
-	Company: TechSimple.co
+	Company: Underground Software LLC
 	Description: TechSimple is here to assist you with your technology problems and teach you how to solve them yourself.
-	Author URI: http://www.sidoniedesigns.com/
+	Author: Karin Savitz
 	Version: 1.0
-   Copyright: TechSimple 2016
+   Copyright: Underground Software LLC 2025
 */
 /* # Table of Contents
 
@@ -57,6 +57,7 @@ textarea {
 }
 
 #services h2, 
+#advanced-services h2, 
 #testimonials h2, 
 #about-us h2, 
 #rates h2,
@@ -892,12 +893,22 @@ li::before {
     	float: left;
     	width: 60%;
 	}
+
+	article.advanced-services{
+    	float: right;
+    	width: 60%;
+	}
 	
 	.main-quote {
     	float: right;
     	width: 36%;
     	text-align: left;
-		font-size: 1.1em;
+	font-size: 1.1em;
+	}
+
+	.advanced-graphic {
+    	float: right;
+    	width: 36%;
 	}
 	
 }
